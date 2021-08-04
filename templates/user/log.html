@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <link rel="preconnect" href="https://fonts.googleapis.com"/>
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+        <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet"/>
+        <link rel="stylesheet" href="style.css" />
+        <title>Login</title>
+        <script src="https://kit.fontawesome.com/81dc95ae9d.js" crossorigin="anonymous"></script>
+    </head>
+    <body>
+      <div class="login-div">
+      <div class="logo"></div>
+      <div class="title">ATTENDANCE</div>
+      <div class="sub-title">SERVER</div>
+      <div class="fields">
+          <div class="username">
+            <i class="fas fa-user" id="us"></i>
+              <input type="username" class="user-input" placeholder="Username" />
+          </div>
+        <div class="password">
+            <i class="fas fa-key" id="ps"></i>
+            <input type="password" class="pass-input" placeholder="Password" id="pass"/>
+            <span class="eye" onclick="myfunc()">
+            <i id="hide1" class="fas fa-eye"></i>
+            <i id="hide2" class="fas fa-eye-slash"></i>
+          </span>
+          </div>
+        <button class="signin-button">LOGIN</button>
+        <div class="link">
+            <a href="#forgot-pw" class="forgot-pw">Forgot Password?</a> or <a href="#">Sign Up</a>
+        </div>
+        <div id="forgot-pw">
+          <form action="" class="form">
+            <a href="#" class="close">&times;</a>
+            <h2 class="reset">RESET PASSWORD</h2>
+            <div class="email">
+              <i class="fas fa-envelope"></i>
+                <input type="email" name="email" id="email" placeholder="Email Id" required>
+            </div>
+            <button class="submit-btn">SUBMIT</button>
+          </form>
+        </div>
+      </div>
+      <script>
+        function myfunc(){
+          var x= document.getElementById("pass");
+          var y= document.getElementById("hide1");
+          var z= document.getElementById("hide2");
+
+          if(x.type=='password'){
+            x.type="text";
+            y.style.display="block";
+            z.style.display="none";
+          }
+          else{
+            x.type="password";
+            y.style.display="none";
+            z.style.display="block";
+          }
+        }
+      </script>
+    </body>
+</html>
