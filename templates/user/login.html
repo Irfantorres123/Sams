@@ -2,5 +2,13 @@
 
 {% block content %}
     {# YOUR PAGE CONTENT HERE #}
+
+    <form method="POST" action='{% url 'login' %}'>
+    {% csrf_token %}
+    {{authentication_form.as_p}}
+
+    <button class='btn' style="background-color:yellow; color:blue" type="submit">login</button>
+    </form>
+
     <h1 class="text-5xl">LOGIN</h1>
 {% endblock content %}
