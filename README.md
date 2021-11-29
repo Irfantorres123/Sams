@@ -1,4 +1,4 @@
-# Attendance Server
+# SAMS
 
 ## Development Requirements :
 * Docker / docker-compose
