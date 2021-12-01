@@ -3,6 +3,7 @@ from django.db.models import indexes
 from university.validators import *
 from user.models import Student, Teacher
 # Create your models here.
+import calendar
 
 
 class University(models.Model):
@@ -43,7 +44,10 @@ class SemesterCourse(models.Model):
     """
     courseId = models.ForeignKey(Course, on_delete=models.DO_NOTHING)
     year = models.SmallIntegerField()
-    month = models.ChoiceField(choices=[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12])
+    MONTH_CHOICES = [(str(i), calendar.month_name[i]) for i in range(1, 13)]
+
+    month = models.CharField(
+        max_length=9, choices=MONTH_CHOICES, null=False, blank=False)
 
 
 class StudentCourse(models.Model):
