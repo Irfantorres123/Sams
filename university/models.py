@@ -1,4 +1,5 @@
 from django.db import models
+from django.db.models import indexes
 from university.validators import *
 from user.models import Student, Teacher
 # Create your models here.
@@ -54,6 +55,7 @@ class StudentCourse(models.Model):
     studentId = models.ForeignKey(Student, on_delete=models.DO_NOTHING)
     sCourseId = models.ForeignKey(SemesterCourse, on_delete=models.DO_NOTHING)
     semesterNumber = models.PositiveSmallIntegerField()
+    indexes = [models.Index(fields=['sCourseId'])]
 
 
 class TeacherCourse(models.Model):
@@ -63,3 +65,4 @@ class TeacherCourse(models.Model):
     """
     teacherId = models.ForeignKey(Teacher, on_delete=models.DO_NOTHING)
     sCourseId = models.ForeignKey(SemesterCourse, on_delete=models.DO_NOTHING)
+    indexes = [models.Index(fields=['sCourseId'])]
