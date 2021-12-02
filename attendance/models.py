@@ -13,6 +13,6 @@ class Attendance(models.Model):
     """
     Stores attendance for every lecture
     """
-    lectureId = models.ForeignKey(Lecture, on_delete=models.DO_NOTHING)
-    studentId = models.ForeignKey(Student, on_delete=models.DO_NOTHING)
+    lectureId = models.ForeignKey(Lecture, on_delete=models.PROTECT)
+    studentId = models.ForeignKey(Student, on_delete=models.PROTECT)
     attendanceState = models.CharField(choices=AttendanceState.choices)

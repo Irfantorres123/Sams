@@ -19,9 +19,9 @@ class TeacherMeta(UserMeta):
 
 class Student(models.Model):
     userId = models.ForeignKey(User, on_delete=models.CASCADE)
-    dataId = models.ForeignKey(StudentMeta, on_delete=models.DO_NOTHING)
+    dataId = models.ForeignKey(StudentMeta, on_delete=models.PROTECT)
 
 
 class Teacher(models.Model):
     userId = models.ForeignKey(User, on_delete=models.CASCADE)
-    dataId = models.ForeignKey(TeacherMeta, on_delete=models.DO_NOTHING)
+    dataId = models.ForeignKey(TeacherMeta, on_delete=models.PROTECT)

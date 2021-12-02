@@ -22,7 +22,7 @@ class Lecture(models.Model):
     This does not impose a strict limit however, and is only for the app to suggest courses.
     It should still be possible to teach a different course during a time allocated to this course.
     """
-    sCourseId = models.ForeignKey(SemesterCourse, on_delete=models.DO_NOTHING)
+    sCourseId = models.ForeignKey(SemesterCourse, on_delete=models.PROTECT)
 
     day = models.CharField(choices=Days.choices, blank=False, null=False)
     startTime = models.TimeField()
