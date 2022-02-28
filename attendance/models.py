@@ -15,4 +15,4 @@ class Attendance(models.Model):
     """
     lecture = models.ForeignKey(Lecture, on_delete=models.PROTECT)
     student = models.ForeignKey(Student, on_delete=models.PROTECT)
-    status = models.CharField(choices=AttendanceStatus.choices)
+    status = models.CharField(choices=AttendanceStatus.choices,max_length=7)
